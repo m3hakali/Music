@@ -1,0 +1,116 @@
+﻿@model EAD_Project.Models.User
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<div class="header-bg">
+    <div class="wrap">
+        <div class="header">
+            <div class="logo">
+                <a href="index.html"><img src="~/images/logo.png" alt="" title="logo"></a>
+            </div>
+            <div class="grid_1_of_3 images_1_of_3">
+
+
+            </div>
+
+            <div class="foot-search">
+                <form action="../User/searchresult" method="post">
+                    <input type="text" id="searchkeyword" name="searchkeyword" value="keyword here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'keyword here';}">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<div class="content-bg">
+        <div class="wrap">
+            <div class="main">
+                <div class="content">
+                    <h2>Specials</h2>
+                    <div class="section group">
+                        <div class="cont">
+                            <div class="single">
+                                <div class="grid-img1">
+                                    <img src="../profile/@Model.Picture"  />
+                                </div>
+
+                               <h3>@Model.Name</h3><br><br>
+                                <h3>@Model.Username</h3><br><br>
+                                <h3>@Model.Email</h3><br><br>
+
+                                <div class="foot-search">
+                                    <div class="contact-form">
+                                        <input type="button" id="showsongs" name="showsongs" value="Show my songs ">
+                                    </div>
+                                    </div>
+                                @section Scripts {
+                                    <script>
+                                        $('#showsongs').click(function () {
+                                            $.ajax({
+                                                url: '/user/mySongsList',
+                                                contentType: 'application/html; charset=utf-8',
+                                                type: 'GET',
+                                                dataType: 'html'
+
+                                            })
+                                            .success(function (result) {
+                                                $('#mysongs').html(result);
+                                            })
+                                            .error(function (xhr, status) {
+                                                alert(status);
+                                            })
+                                        });
+                                    </script>
+                                }
+                                
+                            </div>
+                            <div id="mysongs">
+
+                            </div>
+                            <div class="clear"></div>
+                            
+                        </div>
+
+                        <div class="div2">
+                            <div id="mcts1">
+                                <img src="../web/images/pic4.jpg" alt="" />
+                                <img src="../web/images/pic5.jpg" alt="" />
+                                <img src="../web/images/pic6.jpg" alt="" />
+                                <img src="../web/images/pic7.jpg" alt="" />
+                                <img src="../web/images/pic8.jpg" alt="" />
+                                <img src="../web/images/pic5.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar">
+                <div class="sidebar-list">
+                    <h2>Categories</h2>
+                    <ul>
+                        <li><a href="#">Nulla commodo quam nec tortor </a></li>
+                        <li><a href="#">Quisque lobortis felis eget luctus</a></li>
+                        <li><a href="#">Proin sagittis lorem ac quam aucto</a></li>
+                        <li><a href="#">Nulla commodo quam nec tortor </a></li>
+                        <li><a href="#">Quisque lobortis felis eget luctus</a></li>
+                        <li><a href="#">Quisque lobortis felis eget luctus</a></li>
+                        <li><a href="#">Proin sagittis lorem ac quam aucto</a></li>
+                        <li><a href="#">Nulla commodo quam nec tortor </a></li>
+                        <li><a href="#">Quisque lobortis felis eget luctus</a></li>
+                        <li><a href="#">Quisque lobortis felis eget luctus</a></li>
+                        <li><a href="#">Proin sagittis lorem ac quam aucto</a></li>
+                        <li><a href="#">Proin sagittis lorem ac quam aucto</a></li>
+                        <li><a href="#">Nulla commodo quam nec tortor </a></li>
+                        <li><a href="#">Quisque lobortis felis eget luctus</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+

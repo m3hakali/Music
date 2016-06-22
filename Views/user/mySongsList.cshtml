@@ -1,0 +1,45 @@
+﻿@model IEnumerable<EAD_Project.Models.Song>
+
+
+
+                    <div class="section group example">
+                        <div class="grid_1_of_2 images_1_of_2">
+                        <b>Cover Image</b>
+
+                    </div>
+                    <div class="grid_1_of_2 images_1_of_2">
+                       <b> Title </b>
+                    </div>
+                    <div class="grid_1_of_2 images_1_of_2">
+                       <b>Artist </b>
+                    </div>
+                    <div class="grid_1_of_2 images_1_of_2">
+                        
+                    </div>
+
+                </div>
+            @foreach (var s in Model)
+            {
+                <div class="section group example">
+                    <div class="grid_1_of_2 images_1_of_2">
+                        <a href="details.html"><img src="~/images/songs/@s.Cover" alt="" /></a>
+
+                    </div>
+                    <div class="grid_1_of_2 images_1_of_2">
+                       @s.Title
+                    </div>
+                    <div class="grid_1_of_2 images_1_of_2">
+                        @s.Artist
+                    </div>
+                    <div class="grid_1_of_2 images_1_of_2">
+                        <div class="contact-form">
+                            <form action="../Home/player" method="post">
+                                <input name="song" type="hidden" value="@s.Audio" />
+                                <input type="submit" value="Play Now"/>
+                            </form >
+                        </div>
+                    </div>
+
+                </div>
+            }
+           

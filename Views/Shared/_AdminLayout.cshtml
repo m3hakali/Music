@@ -1,0 +1,63 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    @Styles.Render("~/Content/style.css")
+    @Styles.Render("http://fonts.googleapis.com/css?family=Julius+Sans+One")
+
+</head>
+<body>
+    <div class="menu-bg">
+        <div class="wrap">
+            <div class="menu">
+                <ul class="nav">
+
+                    <li>@Html.ActionLink("Songs", "adminpanel", "Admin")</li>
+                    <li>@Html.ActionLink("Users", "allUsers", "Admin")</li>
+            
+                    <li>@Html.ActionLink("Sign out ", "adminlogin", "Admin")</li>
+
+
+                </ul>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+    @RenderBody()
+    <div class="footer-bg">
+        <div class="wrap">
+            <div class="footer">
+                <div class="section group">
+                    <div class="grid_1_of_4 images_1_of_4">
+                        <h3>About Us</h3>
+                        <p>
+                            We are the leading music website which gives you an opportunity to show case your talent and let the world know about your vocals magic.
+                            Also you can promote and share your favorite songs
+                        </p>
+                    </div>
+                    <div class="grid_1_of_4 images_1_of_4">
+
+                    </div>
+                    <div class="grid_1_of_4 images_1_of_4">
+                        <h3>Recent Posts</h3>
+                        <ul class="f-nav">
+                            <li><a href=""><img src="~/images/facebook.png" alt="" />Facebook</a></li>
+                            <li><a href=""><img src="~/images/twitter.png" alt="" />Twitter</a></li>
+                            <li><a href=""><img src="~/images/gplus.png" alt="" />Google+</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer1-bg">
+        <div class="wrap">
+
+        </div>
+    </div>
+</body>
+</html

@@ -1,0 +1,48 @@
+﻿<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+@model List<EAD_Project.Models.Song>
+<div class="content-bg">
+    <div class="wrap">
+        <div class="main">
+            <div class="content">
+                <h2>Latest Tracks</h2>
+                <div class="select">
+
+
+                    <div class="section group example">
+                        @foreach (var s in Model)
+            {
+                            <div class="grid_1_of_2 images_1_of_2">
+                                <a href="#"><img src="~/images/songs/@s.Cover" alt="" /></a>
+                                <h3>@s.Title</h3>
+                                <span class="price"><sup>@s.Artist</sup></span>
+
+                                <div class="contact-form">
+                                    <form action="../Home/player" method="post">
+                                        <input name="song" type="hidden" value="@s.Audio" />
+                                        <input type="submit" value="Play Now" />
+                                    </form>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+
+
+
+
+        </div>
+    </div>
+</div>

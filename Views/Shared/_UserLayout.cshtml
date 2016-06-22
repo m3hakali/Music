@@ -1,0 +1,87 @@
+﻿<html>
+<head>
+    <title>@ViewBag.Title Rock it up!!!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    @Styles.Render("~/Content/style.css")
+    @Styles.Render("http://fonts.googleapis.com/css?family=Julius+Sans+One")
+    <!--slider-->
+    @Scripts.Render("~/Scripts/modernizr.custom.53451.js")
+    @Scripts.Render("~/Scripts/searchajax.js")
+    @Scripts.Render("~/Scripts/jquery.min.js")
+    @Scripts.Render("~/Scripts/jquery.gallery.js")
+    @Scripts.Render("~/Scripts/slide.js")
+    @Scripts.Render("~/Scripts/jquery.equalizer.js")
+    @Scripts.Render("~/Scripts/jquery.reverseorder.js")
+    @Scripts.Render("~/Scripts/player.js")
+    @Styles.Render("~/Content/style1.css")
+    @Styles.Render("~/Content/jquery.equalizer.css")
+
+
+
+
+</head>
+<body>
+    <div class="menu-bg">
+        <div class="wrap">
+            <div class="menu">
+                <ul class="nav">
+
+                    <li>@Html.ActionLink("Home", "loginIndex", "user")</li>
+                    <li>@Html.ActionLink("Add Track", "addTrack", "user")</li>
+                    <li>@Html.ActionLink("Latest Tracks", "latest", "user")</li>
+                    <li>@Html.ActionLink("Profile", "profile", "user")</li>
+              
+                    <li>@Html.ActionLink("Logout", "index", "Home")</li>
+
+                </ul>
+            </div>
+            <div class="soc-icons">
+                <ul>
+                    <li><a href="">Get In Touch&nbsp;</a></li>
+                    <li><a href=""><img src="~/images/facebook.png" alt="" /></a></li>
+                    <li><a href=""><img src="~/images/twitter.png" alt="" /></a></li>
+                    <li><a href=""><img src="~/images/gplus.png" alt="" /></a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    
+    @RenderBody()
+    @RenderSection("Scripts", false)
+    <div class="footer-bg">
+        <div class="wrap">
+            <div class="footer">
+                <div class="section group">
+                    <div class="grid_1_of_4 images_1_of_4">
+                        <h3>About Us</h3>
+                        <p>
+                            We are the leading music website which gives you an opportunity to show case your talent and let the world know about your vocals magic.
+                            Also you can promote and share your favorite songs
+                        </p>
+                    </div>
+                    <div class="grid_1_of_4 images_1_of_4">
+
+                    </div>
+                    <div class="grid_1_of_4 images_1_of_4">
+                        <h3>Recent Posts</h3>
+                        <ul class="f-nav">
+                            <li><a href=""><img src="~/images/facebook.png" alt="" />Facebook</a></li>
+                            <li><a href=""><img src="~/images/twitter.png" alt="" />Twitter</a></li>
+                            <li><a href=""><img src="~/images/gplus.png" alt="" />Google+</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer1-bg">
+        <div class="wrap">
+
+        </div>
+    </div>
+</body>
+</html>
